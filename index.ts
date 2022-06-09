@@ -1,5 +1,5 @@
 import { INITIAL_OPTIONS } from './constants';
-import type { Response, Scheme, Source } from './types';
+import type { Response, Source, ValidationScheme } from './types';
 import assertEqual from './utils/assertEqual';
 import assertMaxLength from './utils/assertMaxLength';
 import assertMinLength from './utils/assertMinLength';
@@ -9,7 +9,7 @@ import assertValue from './utils/assertValue';
 import createReason from './utils/createReason';
 import onValidate from './utils/onValidate';
 
-const validateObject = (values: Source, scheme: Scheme): Response => {
+const validateObject = (values: Source, scheme: ValidationScheme): Response => {
   if (!scheme) return { success: true };
   if (!values) return { success: false };
 
@@ -19,7 +19,7 @@ const validateObject = (values: Source, scheme: Scheme): Response => {
       minLength: undefined,
     };
 
-    if (property.type === 'string') {
+    if (property.extract().type === 'string') {
       lengths = {
         maxLength: Number.MAX_SAFE_INTEGER,
         minLength: Number.MIN_SAFE_INTEGER,
@@ -34,7 +34,7 @@ const validateObject = (values: Source, scheme: Scheme): Response => {
       maxLength,
       compareWith,
       onValidate: callback,
-    } = { ...INITIAL_OPTIONS, ...lengths, ...property };
+    } = { ...INITIAL_OPTIONS, ...lengths, ...property.extract() };
 
     if (optional && !assertValue(values[name])) {
       continue;

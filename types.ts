@@ -39,7 +39,15 @@ export type Extended = {
   onValidate?: (value: any) => string | void;
 };
 
-export type Scheme = Extended[];
+export type ValidationScheme = Scheme[];
+export interface Scheme {
+  onValidate(callback: (value: any) => string | void): Scheme;
+  min(length: number): Scheme;
+  max(length: number): Scheme;
+  compareWith(key: string): Scheme;
+  optional(): Scheme;
+  extract(): Extended;
+}
 
 export interface Source {
   [key: string]: unknown;

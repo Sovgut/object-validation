@@ -1,6 +1,6 @@
-import type { Extended, Primitive, Property } from '../types';
+import type { Extended, Primitive, Property, Scheme } from '../types';
 
-const property = (key: Property) => {
+const property = (key: Property): Scheme => {
   const [name, type] = key.split(':');
   const closure: Extended = { name, type: type as Primitive };
 
