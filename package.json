@@ -1,0 +1,39 @@
+{
+  "name": "object-validation",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sovgut/object-validation.git"
+  },
+  "keywords": [
+    "validation",
+    "validate",
+    "valid",
+    "checking",
+    "check",
+    "object",
+    "obj",
+    "js",
+    "ts",
+    "commonjs",
+    "nodejs"
+  ],
+  "author": {
+    "name": "Sergey Sovgut",
+    "email": "dev.devua@outlook.com",
+    "url": "https://sovgut.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sovgut/object-validation/issues"
+  },
+  "homepage": "https://github.com/Sovgut/object-validation#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.41",
+    "typescript": "^4.7.3"
+  }
+}
