@@ -95,4 +95,12 @@ const validateObject = (values: Source, scheme: Scheme): Response => {
 };
 
 export default validateObject;
+export type {
+  Extended,
+  Primitive,
+  Property,
+  Response,
+  Scheme,
+  Source,
+} from './types';
 export { default as property } from './utils/property';
