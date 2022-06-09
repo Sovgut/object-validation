@@ -95,3 +95,4 @@ const validateObject = (values: Source, scheme: Scheme): Response => {
 };
 
 export default validateObject;
+export { default as property } from './utils/property';
