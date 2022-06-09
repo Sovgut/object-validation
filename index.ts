@@ -75,7 +75,7 @@ const validateObject = (values: Source, scheme: ValidationScheme): Response => {
       };
     }
 
-    if (compareWith && !assertEqual(values[name], name, compareWith)) {
+    if (compareWith && !assertEqual(values, name, compareWith)) {
       return {
         success: false,
         reason: createReason(name, 'is-not-comparable'),
