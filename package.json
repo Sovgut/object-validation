@@ -1,5 +1,5 @@
 {
-  "name": "object-validation",
+  "name": "@sovgut/object-validation",
   "version": "1.0.0",
   "main": "build/index.js",
   "scripts": {
