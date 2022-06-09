@@ -23,13 +23,13 @@ const validateObject = (values, scheme) => {
             maxLength: undefined,
             minLength: undefined,
         };
-        if (property.type === 'string') {
+        if (property.extract().type === 'string') {
             lengths = {
                 maxLength: Number.MAX_SAFE_INTEGER,
                 minLength: Number.MIN_SAFE_INTEGER,
             };
         }
-        const { name, type, optional, minLength, maxLength, compareWith, onValidate: callback, } = Object.assign(Object.assign(Object.assign({}, constants_1.INITIAL_OPTIONS), lengths), property);
+        const { name, type, optional, minLength, maxLength, compareWith, onValidate: callback, } = Object.assign(Object.assign(Object.assign({}, constants_1.INITIAL_OPTIONS), lengths), property.extract());
         if (optional && !(0, assertValue_1.default)(values[name])) {
             continue;
         }
@@ -63,7 +63,7 @@ const validateObject = (values, scheme) => {
                 reason: (0, createReason_1.default)(name, 'out-of-range'),
             };
         }
-        if (compareWith && !(0, assertEqual_1.default)(values[name], name, compareWith)) {
+        if (compareWith && !(0, assertEqual_1.default)(values, name, compareWith)) {
             return {
                 success: false,
                 reason: (0, createReason_1.default)(name, 'is-not-comparable'),
