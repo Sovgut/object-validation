@@ -3,9 +3,9 @@ import validateObject, { property, Scheme } from '@sovgut/object-validation';
 
 const request = {
   body: {
-    email: 'sergey.sovgut@outlook.com',
-    password: 'secret010101',
-    confirmPassword: 'secret010101',
+    email: 'example@email.com',
+    password: 'superSecretPassw0rd!',
+    confirmPassword: 'superSecretPassw0rd!',
   },
 };
 
