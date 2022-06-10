@@ -35,7 +35,7 @@ _Returns_
 - `min(length: number)` - sets the minimum of length for string source
 - `max(length: number)` - sets the maximum of length for string source
 - `compareWith(key: string)` - sets comparison within source and target properties
-- `onValidate(callback: (value: any) => string | void)` - sets additional custom validation for source property, should return an error string like `"something-happend-wrong"` or nothing (`void`)
+- `onValidate(callback: (value: any) => string | void)` - sets additional custom validation for source property, should return an error string like `"something-wrong-happened"` or nothing (`void`)
 - `optional()` - sets source property as optional and any validations just skipped this property if error raised
 
 <hr />
